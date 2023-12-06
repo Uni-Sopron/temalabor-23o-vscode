@@ -1,0 +1,55 @@
+/* src/App.css */
+
+/* Kék csík a képernyő tetején */
+.header-bar {
+  background-color: rgb(48, 46, 49);
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2; /* A kék csík z-index értékét növeljük */
+}
+
+/* Navigációs gombok elrendezése */
+nav {
+  margin-top: 5px;
+  position: fixed;
+  top: 0px; /* A kék csík magasságának megfelelő távolság */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  z-index: 3; 
+  cursor: pointer;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold; /* Félkövér betűtípus */
+}
+nav ul {
+  margin-left: 200px;
+  list-style: none; /* Eltávolítjuk a listajelöléseket */
+  padding: 0; /* Eltávolítjuk a belső térkitöltést */
+  display: flex;
+  text-align: center;
+}
+
+nav li {
+  margin-right: 40px; /* Térköz a menüpontok között */
+/* Oldalak címei */
+}
+.logo-container {
+  
+  z-index: 1; /* A logó konténer z-index értékét beállítjuk */
+}
+.logo {
+  max-width: 140px; /* Állítsd be a megfelelő méretre */
+  position: relative;
+  margin-left: 20px; /* 10 pixel balra igazítás */
+  z-index: 2; /* A logó z-index értékét növeljük */
+}
+
+
