@@ -1,26 +1,24 @@
-/* src/components/Home.css */
 .background-container {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url('/public/img/home_wallpaper.png');
-    background-size: cover;
+    background-image: url('/public/img/home_wallpaper.jpeg');
+    background-size: cover; ;
     background-attachment: fixed;
     filter: brightness(90%);
     z-index: -1; /* Háttérkép alacsonyabb réteg (hátrébb kerül) */
   }
   
-  
-  .text {
-    font-size: 20px;
-    margin: 20px; /* Itt állíthatod be a kívánt margót */
+  .maintext {
+    font-size: 22px;
+    margin: 40px; /* Itt állíthatod be a kívánt margót */
     color: white;
-    text-align: center;
+    text-align: justify;
+    margin-top: 50px;
     
   }
-  
   .text li {
     list-style-type: none; /* Elrejti a beépített listajelet (pl. kör) */
     font-weight: bold;
@@ -31,4 +29,5 @@
     font-size: 18px;
     top: 10px;
   }
+
   

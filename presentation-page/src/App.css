@@ -3,7 +3,7 @@
 /* Kék csík a képernyő tetején */
 .header-bar {
   background-color: rgb(48, 46, 49);
-  height: 60px;
+  height: 80px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -30,14 +30,15 @@ nav a {
   font-weight: bold; /* Félkövér betűtípus */
 }
 nav ul {
-  margin-left: 450px;
+  margin-left: 200px;
   list-style: none; /* Eltávolítjuk a listajelöléseket */
   padding: 0; /* Eltávolítjuk a belső térkitöltést */
   display: flex;
+  text-align: center;
 }
 
 nav li {
-  margin-right: 200px; /* Térköz a menüpontok között */
+  margin-right: 40px; /* Térköz a menüpontok között */
 /* Oldalak címei */
 }
 .logo-container {
