@@ -28,7 +28,24 @@ Ezeket az eszközöket választottuk a fejlesztés során, mert:
 - A JSON egyszerű és könnyen olvasható, ideális adatok tárolásához és kommunikációjához.
 
 Alternatívákat is megfontoltunk, de ezek az eszközök együttesen a fejlesztési célok és a könnyű integráció miatt bizonyultak optimálisnak a projektünk számára.</p>
+<h5 className='tittles'>Gyakran használt oldalak:</h5>
+
+  <div>
+    <a href="https://code.visualstudio.com/api" style={{ fontSize: '16px', display: 'block', marginBottom: '8px' }}>
+      Visual Studio Code API dokumentáció
+    </a>
+
+    <a href="https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter" style={{ fontSize: '16px', display: 'block', marginBottom: '8px' }}>
+      Visual Studio Code Counter Extension
+    </a>
+
+    <a href="https://marketplace.visualstudio.com/items?itemName=vizzuhq.code-viz-stat" style={{ fontSize: '16px', display: 'block' }}>
+      Visual Studio Code Stat Extension
+    </a>
+  </div>
+  
     </div>
+
   );
 }
 
