@@ -6,6 +6,7 @@ function TaskPresentation() {
     <div className='maintext'>
     <div className='background-container'></div>
       <h2>Probléma definíció és követelmények</h2>
+      <div style={{ marginLeft: '20px' }}>
       <h4>Feladat és téma:</h4>
       <p>
       </p>VS Code extension fejlesztése: egy leaderboard megjelenítése, ami élőben követi a csapattagok aznapi/heti/havi teljesítményét (pl. megírt kódsorok száma).
@@ -28,6 +29,7 @@ function TaskPresentation() {
         <p>
 Ezen követelmények figyelembevételével  képesek lesznünk egy hatékony és felhasználóbarát VS Code extension létrehozására, amely lehetővé teszi a csapat tagjai számára a teljesítményük élő követését és összehasonlítását.
 </p>
+    </div>
     </div>
     );
 }

@@ -15,6 +15,14 @@ function Home() {
           <li>Kiss Gergely Pál</li>
           <li>Hencz Balázs</li>
         </ul>
+        <p>
+            A témalaborok kiváló alkalmat kínálnak a csapatmunkára és a valóságos fejlesztési folyamatok elsajátítására. 
+            A laborok célja, hogy a csapatok valós problémákon vagy projekteken dolgozzanak együtt, kihasználva az egyéni szakértelmet és kreativitást.
+        <p> A Visual Studio Code (VSC) kiterjesztéseinek használata a fejlesztés során hatékonyabbá teheti a munkafolyamatot. Egy témalabor során a csapat fejleszthet egy VSC kiterjesztést, ötvözve a csapatmunka előnyeit a modern fejlesztőeszközökkel. Ez a projekt lehetőséget ad a csapattagoknak problémamegoldásra, 
+            kommunikációra és valóságos fejlesztési készségek gyakorlására. A VSC kiterjesztés fejlesztése emellett hasznos tapasztalatokkal látja el a résztvevőket a szoftvertervezés és fejlesztés területén.
+             </p>
+                  
+        </p>
       </div>
     </div>
   );

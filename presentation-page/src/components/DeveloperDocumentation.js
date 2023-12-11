@@ -6,6 +6,7 @@ function DeveloperDocumentation() {
     <div className='maintext'>
     <div className='background-container'></div>
       <h2>Fejlesztői dokumentáció</h2>
+      <div style={{ marginLeft: '20px' }}>
       <p>Ez az a rész, ahol a technikai részleteket le lehet és 
         le is kell írni. Érdemes valamilyen keretbe foglalni, 
         hasznos egy felvezetés, ami az egyes alfejezetek tartalmát
@@ -13,6 +14,7 @@ function DeveloperDocumentation() {
          sorig emelünk be inline kódot, és mennyitől linkeljük csak.
           Ökölszabályként azt mondanám, hogy 5-10, max 15 sorokat 
           még be lehet emelni, ennél többet már csak linkeljetek.</p>
+        </div>
     </div>
   );
 }

@@ -6,6 +6,7 @@ function UserTechnological() {
     <div className='maintext'>
     <div className='background-container'></div>
       <h2>Felhasznált technológiák</h2>
+      <div style={{ marginLeft: '20px' }}>
       <p>A leaderboard kiterjesztés fejlesztése során számos technológia és eszköz kerül felhasználásra, mind a fejlesztői környezet, mind a végtermék részeként.
 
 <h5 className='tittles'>TypeScript:</h5>
@@ -43,7 +44,7 @@ Alternatívákat is megfontoltunk, de ezek az eszközök együttesen a fejleszt�
       Visual Studio Code Stat Extension
     </a>
   </div>
-  
+  </div>
     </div>
 
   );

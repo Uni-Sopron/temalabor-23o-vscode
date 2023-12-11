@@ -6,6 +6,7 @@ function Summary() {
     <div className='maintext'>
     <div className='background-container'></div>
       <h2>Összefoglalás</h2>
+      <div style={{ marginLeft: '20px' }}>
       <p>
 
 A leaderboard kiterjesztés sikeresen létrehoz egy hatékony eszközt a csapatok 
@@ -24,6 +25,7 @@ lehetővé teszik a felhasználók számára, hogy könnyen nyomon kövessék é
           </ul>
 
 A kiterjesztés tervezett verziója egy hatékony eszközt fog kínálni a csapatok teljesítményének nyomon követéséhez, de a fenti továbbfejlesztési lehetőségekkel még további funkcionalitásokat és testreszabhatóságot lehet elérni. Ezek az újítások tovább növelhetik a kiterjesztés értékét és szélesebb körű alkalmazhatóságát.</p>
+</div>
     </div>
   );
 }

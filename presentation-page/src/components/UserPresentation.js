@@ -6,6 +6,7 @@ function UserPresentation() {
     <div className='maintext'>
     <div className='background-container'></div>
       <h2>Felhasználói bemutatás</h2>
+      <div style={{ marginLeft: '20px' }}>
       <p>
 
 Az alábbiakban egy rövid leírás található arról, hogy hogyan használhatja a kiterjesztést a Visual Studio Code felhasználója.
@@ -20,6 +21,7 @@ A felhasználó egy kattintással megtekintheti a csapattagok részletes teljes�
 <h5 className='tittles'>Dinamikus Frissítés:</h5>
 A leaderboard dinamikusan frissül, ahogy a csapattagok tovább dolgoznak. Az adatok naponta, hetente és havi rendszerességgel frissülnek, így mindig naprakész információkat láthat a felhasználó.
 </p>
+    </div>
     </div>
   );
 }
