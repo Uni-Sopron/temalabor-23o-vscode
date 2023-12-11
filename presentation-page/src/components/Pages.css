@@ -17,16 +17,22 @@
     color: white;
     text-align: justify;
     margin-top: 100px;
+  }
+  .tittles {
+    font-size: 21px;
+    margin-bottom: 10px; /* Itt állíthatod be a kívánt margót */
+    color: white;
+    text-align: justify;
     
   }
   .text li {
     list-style-type: none; /* Elrejti a beépített listajelet (pl. kör) */
     font-weight: bold;
-    line-height: 1.5;
+    line-height:2;
     color: white;
     text-align: left;
     margin-left: 150px;
-    font-size: 18px;
+    font-size: 200px;
     top: 10px;
   }
 
