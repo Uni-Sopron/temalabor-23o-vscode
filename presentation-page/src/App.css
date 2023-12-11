@@ -14,6 +14,7 @@
 /* Navigációs gombok elrendezése */
 nav {
   margin-top: 5px;
+  margin-bottom: 10px;
   position: fixed;
   top: 0px; /* A kék csík magasságának megfelelő távolság */
   width: 100%;
@@ -23,6 +24,7 @@ nav {
   z-index: 3; 
   cursor: pointer;
 }
+
 
 nav a {
   text-decoration: none;
@@ -47,7 +49,8 @@ nav li {
 }
 .logo {
   max-width: 140px; /* Állítsd be a megfelelő méretre */
-  position: relative;
+  position: fixed;
+  top: 10px;
   margin-left: 20px; /* 10 pixel balra igazítás */
   z-index: 2; /* A logó z-index értékét növeljük */
 }

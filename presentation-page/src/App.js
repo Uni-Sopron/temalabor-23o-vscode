@@ -27,6 +27,7 @@ function App() {
           <ul>
             <li>
               <Link to="/">Bevezetés</Link>
+              
             </li>
 
             <li>
