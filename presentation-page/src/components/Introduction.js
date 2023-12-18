@@ -11,7 +11,6 @@ function Home() {
         <h2 style={{textAlign: 'center'}}>VS Code extension fejlesztése</h2>
         <h3 style={{textAlign: 'left', marginBottom: '20px', marginTop:'80px'}}>Csapattagok: </h3>
         <ul>
-          <li>Horváth Roland Tamás</li>
           <li>Kiss Gergely Pál</li>
           <li>Hencz Balázs</li>
         </ul>

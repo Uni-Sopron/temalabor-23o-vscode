@@ -25,7 +25,7 @@ function App() {
 
         <nav>
           <ul>
-            <li>
+            <li >
               <Link to="/">Bevezetés</Link>
               
             </li>
