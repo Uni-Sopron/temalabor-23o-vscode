@@ -9,25 +9,55 @@ const path = require('path');
 
 import { EXTENSION_CONSTANT } from "constant";
 import { LeftPanelWebview } from "providers/left-webview-provider";
+import * as child_process from 'child_process';
 
 interface CommitData {
     committer: string;
     lines_changed: number;
 }
+let intervalId;
+const dynamicWebviews: { [id: string]: vscode.WebviewPanel } = {};
 
 export function activate(context: vscode.ExtensionContext) {
-	updateCommitData();
-	let helloWorldCommand = vscode.commands.registerCommand(
-		"vscode-webview-extension-with-react.helloWorld",
-		() => {
-			vscode.window.showInformationMessage(
-				"Hello World from vscode-webview-extension-with-react!"
-			);
-		}
-	);
-	context.subscriptions.push(helloWorldCommand);
 
-	// Register view
+
+  const dynamicWebviewTimers: { [id: string]: NodeJS.Timer } = {};
+  initalize();
+  // Időzítő beállítása 5 perces intervallummal
+  intervalId = setInterval(() => {
+    initalize();
+  }, 60 * 1000);  // 60 másodperc * 1000 milliszekundum/másodperc
+
+  function createAndShowWebview(command: string, title: string, contentFn: () => string) {
+    // Webview törlése ha már létezik
+    if (dynamicWebviews[command]) {
+      dynamicWebviews[command].dispose();
+  }
+
+  // Ellenőrzi hogy timer megy-e már
+  if (dynamicWebviewTimers[command]) {
+      // Már létező timer törlése
+      clearInterval(dynamicWebviewTimers[command]);
+  }
+
+    // Létrehoz és felmutat egy webview-t
+    const panel = vscode.window.createWebviewPanel(
+        'jsonlist',
+        title,
+        vscode.ViewColumn.One,
+        {}
+    );
+    panel.webview.html = contentFn();
+
+    // Referencia elmentése
+    dynamicWebviews[command] = panel;
+
+    // Új timer beálíttása
+    dynamicWebviewTimers[command] = setInterval(() => {
+        panel.webview.html = contentFn();
+    }, 60 * 1000);  // 60 másodperc * 1000 milliszekundum/másodperc
+  }
+	// View regisztrálása
 	const leftPanelWebViewProvider = new LeftPanelWebview(context?.extensionUri, {});
 	let view = vscode.window.registerWebviewViewProvider(
 		EXTENSION_CONSTANT.LEFT_PANEL_WEBVIEW_ID,
@@ -37,53 +67,28 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Listák regisztrálása
 	context.subscriptions.push(
-		vscode.commands.registerCommand('allTime.start', () => {
-		  // Create and show a new webview
-		  const panel = vscode.window.createWebviewPanel(
-			'jsonlist', // Identifies the type of the webview. Used internally
-			'All Time list', // Title of the panel displayed to the user
-			vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-			{} // Webview options. More on these later.
-		  );
-		  panel.webview.html = getContent(readChangesJsonFile());
-		})
-	  );
-	  context.subscriptions.push(
-		vscode.commands.registerCommand('daily.start', () => {
-		  // Create and show a new webview
-		  const panel = vscode.window.createWebviewPanel(
-			'jsonlist', // Identifies the type of the webview. Used internally
-			'Daily list', // Title of the panel displayed to the user
-			vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-			{} // Webview options. More on these later.
-		  );
-		  panel.webview.html = getContent(readDailyJsonFile());
-		})
-	  );
-	  context.subscriptions.push(
-		vscode.commands.registerCommand('weekly.start', () => {
-		  // Create and show a new webview
-		  const panel = vscode.window.createWebviewPanel(
-			'jsonlist', // Identifies the type of the webview. Used internally
-			'Weekly list', // Title of the panel displayed to the user
-			vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-			{} // Webview options. More on these later.
-		  );
-		  panel.webview.html = getContent(readWeeklyJsonFile());
-		})
-	  );
-	  context.subscriptions.push(
-		vscode.commands.registerCommand('monthly.start', () => {
-		  // Create and show a new webview
-		  const panel = vscode.window.createWebviewPanel(
-			'jsonlist', // Identifies the type of the webview. Used internally
-			'Monthly list', // Title of the panel displayed to the user
-			vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-			{} // Webview options. More on these later.
-		  );
-		  panel.webview.html = getContent(readMonthlyJsonFile());
-		})
-	  );
+    vscode.commands.registerCommand('allTime.start', () => {
+        createAndShowWebview('allTime', 'All Time list', () => getContent(readChangesJsonFile()));
+    })
+);
+
+context.subscriptions.push(
+    vscode.commands.registerCommand('daily.start', () => {
+        createAndShowWebview('daily', 'Daily list', () => getContent(readDailyJsonFile()));
+    })
+);
+
+context.subscriptions.push(
+    vscode.commands.registerCommand('weekly.start', () => {
+        createAndShowWebview('weekly', 'Weekly list', () => getContent(readWeeklyJsonFile()));
+    })
+);
+
+context.subscriptions.push(
+    vscode.commands.registerCommand('monthly.start', () => {
+        createAndShowWebview('monthly', 'Monthly list', () => getContent(readMonthlyJsonFile()));
+    })
+);
 
 };
 
@@ -325,9 +330,42 @@ async function fetchData() {
 	}
   }
 
-  async function updateCommitData() {
+async function updateCommitData() {
     await fetchData();
 }
 
+function runPythonScript() {
+  // Get the absolute path of the currently executing TypeScript file Az elérési út megtekintése a jelenlegi futó file-tól
+  const currentFilePath = __filename;
+
+  // Root könyvtár megkeresése
+  const rootDirectory = path.join(path.dirname(currentFilePath), '..');
+
+  // A Python script megkeresése a root könyvtárban
+  const pythonScriptPath = path.join(rootDirectory, 'temalabor.py');
+
+  const pythonProcess = child_process.spawn('python', [pythonScriptPath]);
+
+  pythonProcess.stdout.on('data', (data) => {
+      console.log(`Python Script Output: ${data}`);
+  });
+
+  pythonProcess.stderr.on('data', (data) => {
+      console.error(`Python Script Error: ${data}`);
+  });
+
+  pythonProcess.on('close', (code) => {
+      console.log(`Python Script exited with code ${code}`);
+  });
+}
+export function initalize() {
+  runPythonScript();
+	updateCommitData();
+};
+
 // Ez akkor fut le ha kikapcsol az extention
-export function deactivate() {}
+export function deactivate() {
+  if (intervalId) {
+    clearInterval(intervalId);
+}
+}
