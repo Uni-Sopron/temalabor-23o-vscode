@@ -11,7 +11,6 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vscode-webview-extension-with-react.helloWorld",
     "onView:left-panel-webview"
   ],
   "main": "./dist/extension.js",
@@ -42,7 +41,7 @@
       "activitybar": [
         {
           "id": "webview",
-          "title": "Example for webview",
+          "title": "GitHub contributor checker extention",
           "icon": "./assets/extension-icon.png"
         }
       ]

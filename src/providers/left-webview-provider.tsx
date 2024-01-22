@@ -2,6 +2,7 @@ import { WebviewViewProvider, WebviewView, Webview, Uri, EventEmitter, window} f
 import { Utils } from "utils";
 import LeftPanel from 'components/LeftPanel';
 import * as ReactDOMServer from "react-dom/server";
+import * as vscode from "vscode";
 
 export class LeftPanelWebview implements WebviewViewProvider {
 	constructor(
@@ -32,6 +33,19 @@ export class LeftPanelWebview implements WebviewViewProvider {
 			switch (message.action){
 				case 'SHOW_WARNING_LOG':
 					window.showWarningMessage(message.data.message);
+					vscode.commands.executeCommand('allTime.start');
+					break;
+				case 'SHOW_DAILY_WARNING_LOG':
+					window.showWarningMessage(message.data.message);
+					vscode.commands.executeCommand('daily.start');
+					break;
+				case 'SHOW_WEEKLY_WARNING_LOG':
+					window.showWarningMessage(message.data.message);
+					vscode.commands.executeCommand('weekly.start');
+					break;
+				case 'SHOW_MONTHLY_WARNING_LOG':
+					window.showWarningMessage(message.data.message);
+					vscode.commands.executeCommand('monthly.start');
 					break;
 				default:
 					break;
@@ -82,7 +96,7 @@ export class LeftPanelWebview implements WebviewViewProvider {
                     ${
                         
                         ReactDOMServer.renderToString((
-							<LeftPanel message={"Tutorial for Left Panel Webview in VSCode extension"}></LeftPanel>
+							<LeftPanel message={"Select an option"}></LeftPanel>
 						))
                     }
 					<script nonce="${nonce}" type="text/javascript" src="${constantUri}"></script>

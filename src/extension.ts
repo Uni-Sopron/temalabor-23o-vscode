@@ -111,7 +111,7 @@ function getContent(jsonData): string {
     if (jsonData && jsonData.length > 0) {
         commitsHtml = displayCommitsInHTML(jsonData);
     } else {
-        commitsHtml = 'Senki se dolgozott...';
+        commitsHtml = 'Noone did anything...';
         imageUrl = 'https://i.pinimg.com/originals/09/76/15/09761501f31eaf1c9995925a4dbb7dbf.jpg';
     }
 
@@ -125,7 +125,7 @@ function getContent(jsonData): string {
       </head>
       <body>
           <img src="${imageUrl}" width="300" />
-		  <div>${jsonData && jsonData.length > 0 ? 'A repo All-time modosíttói:' : ''}</div>
+		  <div>${jsonData && jsonData.length > 0 ? 'The repository was modified by:' : ''}</div>
           <div id="results">${commitsHtml}</div>
       </body>
       </html>`;
@@ -173,7 +173,7 @@ function readChangesJsonFile(): CommitData[] | null {
 }
 function readDailyJsonFile(): CommitData[] | null {
     const workspacePath = vscode.workspace?.workspaceFolders?.[0]?.uri.fsPath || '';
-    const filePath = path.join(workspacePath, 'output', 'daily.json');
+    const filePath = path.join(workspacePath, 'daily.json');
 
     try {
         const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -190,7 +190,7 @@ function readDailyJsonFile(): CommitData[] | null {
 }
 function readWeeklyJsonFile(): CommitData[] | null {
     const workspacePath = vscode.workspace?.workspaceFolders?.[0]?.uri.fsPath || '';
-    const filePath = path.join(workspacePath, 'output', 'weekly.json');
+    const filePath = path.join(workspacePath, 'weekly.json');
 
     try {
         const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -207,7 +207,7 @@ function readWeeklyJsonFile(): CommitData[] | null {
 }
 function readMonthlyJsonFile(): CommitData[] | null {
     const workspacePath = vscode.workspace?.workspaceFolders?.[0]?.uri.fsPath || '';
-    const filePath = path.join(workspacePath, 'output', 'monthly.json');
+    const filePath = path.join(workspacePath, 'monthly.json');
 
     try {
         const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -314,7 +314,7 @@ async function fetchData() {
   function saveSummaryToFile(summary, fileName) {
 	// vscode.workspace stringgé alakíttása vagy üres string vissza adása ha nem lehet
 	const workspacePath = vscode.workspace?.workspaceFolders?.[0]?.uri.fsPath || '';
-	const filePath = path.join(workspacePath, 'output', fileName);
+	const filePath = path.join(workspacePath, fileName);
 	const jsonContent = JSON.stringify(summary, null, 2);
   
 	try {
