@@ -1,92 +1,122 @@
 [
   {
     "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "aaa",
-    "timestamp": "2024-01-17 18:27:39"
+    "lines_changed": 2,
+    "commit message": "test",
+    "timestamp": "2024-01-22 18:25:29"
+  },
+  {
+    "committer": "koczankr",
+    "lines_changed": 3,
+    "commit message": "Update proba.txt",
+    "timestamp": "2024-01-22 18:19:59"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 3,
+    "commit message": "szamlalas",
+    "timestamp": "2024-01-22 18:18:19"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 1,
+    "commit message": "krisz",
+    "timestamp": "2024-01-22 18:17:19"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 1,
+    "commit message": "test",
+    "timestamp": "2024-01-22 18:15:00"
   },
   {
     "committer": "Balazs8",
     "lines_changed": 0,
-    "message": "hop",
-    "timestamp": "2024-01-17 18:25:27"
+    "commit message": "prob",
+    "timestamp": "2024-01-22 18:14:30"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 2,
+    "commit message": "most?",
+    "timestamp": "2024-01-22 18:13:57"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 3,
+    "commit message": "jo?",
+    "timestamp": "2024-01-22 18:13:25"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 1,
+    "commit message": "aaaa",
+    "timestamp": "2024-01-22 18:06:09"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 1,
+    "commit message": "megy?",
+    "timestamp": "2024-01-22 18:02:16"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 1,
+    "commit message": "proba",
+    "timestamp": "2024-01-22 18:00:38"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 1,
+    "commit message": "test",
+    "timestamp": "2024-01-22 17:59:11"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 4,
+    "commit message": "most?",
+    "timestamp": "2024-01-22 17:57:12"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 2,
+    "commit message": "new",
+    "timestamp": "2024-01-22 17:56:35"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 152,
+    "commit message": "update",
+    "timestamp": "2024-01-19 15:37:46"
+  },
+  {
+    "committer": "Balazs8",
+    "lines_changed": 20,
+    "commit message": "kiegesztites",
+    "timestamp": "2024-01-19 15:36:11"
   },
   {
     "committer": "Balazs8",
     "lines_changed": 0,
-    "message": "ez",
-    "timestamp": "2024-01-17 18:21:33"
+    "commit message": "torles",
+    "timestamp": "2024-01-19 15:35:14"
   },
   {
     "committer": "Balazs8",
     "lines_changed": 0,
-    "message": "now",
-    "timestamp": "2024-01-17 18:18:09"
+    "commit message": "proba",
+    "timestamp": "2024-01-19 15:33:58"
   },
   {
     "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "11",
-    "timestamp": "2024-01-17 18:16:54"
+    "lines_changed": 202,
+    "commit message": "Add files via upload",
+    "timestamp": "2024-01-19 15:17:38"
   },
   {
     "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "most",
-    "timestamp": "2024-01-17 18:15:52"
-  },
-  {
-    "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "valt",
-    "timestamp": "2024-01-17 18:13:36"
-  },
-  {
-    "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "\u00faj",
-    "timestamp": "2024-01-17 18:12:39"
-  },
-  {
-    "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "torles",
-    "timestamp": "2024-01-17 18:11:49"
-  },
-  {
-    "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "aaa",
-    "timestamp": "2024-01-17 18:10:44"
-  },
-  {
-    "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "torles",
-    "timestamp": "2024-01-17 17:28:06"
-  },
-  {
-    "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "v\u00e1ltoz\u00e1s",
-    "timestamp": "2024-01-17 17:26:19"
-  },
-  {
-    "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "new",
-    "timestamp": "2024-01-17 16:47:07"
-  },
-  {
-    "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "add todo-app",
-    "timestamp": "2023-10-17 13:48:05"
-  },
-  {
-    "committer": "Balazs8",
-    "lines_changed": 0,
-    "message": "Initialize project using Create React App",
-    "timestamp": "2023-10-16 16:11:05"
+    "lines_changed": 1,
+    "commit message": "Initial commit",
+    "timestamp": "2024-01-19 15:16:19"
   }
 ]
