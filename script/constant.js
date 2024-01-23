@@ -1,0 +1,13 @@
+const ELEMENT_IDS = {
+    TRIGGER_MESSAGE_BUTTON: 'trigger-show-message-button',
+    TRIGGER_DAILY_BUTTON: 'trigger-show-daily-button',
+    TRIGGER_WEEKLY_BUTTON: 'trigger-show-weekly-button',
+    TRIGGER_MONTHLY_BUTTON: 'trigger-show-monthly-button'
+};
+
+const POST_MESSAGE_ACTION = {
+    SHOW_WARNING_LOG: 'SHOW_WARNING_LOG',
+    SHOW_DAILY_WARNING_LOG: 'SHOW_DAILY_WARNING_LOG',
+    SHOW_WEEKLY_WARNING_LOG: 'SHOW_WEEKLY_WARNING_LOG',
+    SHOW_MONTHLY_WARNING_LOG: 'SHOW_MONTHLY_WARNING_LOG',
+};
