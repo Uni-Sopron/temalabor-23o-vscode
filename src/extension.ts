@@ -4,18 +4,21 @@ try {
 	console.log("module-alias import error !");
 }
 import * as vscode from "vscode";
+import * as request from 'request-promise-native'; // Make sure to install the 'request-promise-native' package
 const fs = require('fs');
 const path = require('path');
 
 import { EXTENSION_CONSTANT } from "constant";
 import { LeftPanelWebview } from "providers/left-webview-provider";
-import * as child_process from 'child_process';
+import { jsonGenerator } from "../temalabor";
+// import * as child_process from 'child_process';
 
 interface CommitData {
     committer: string;
     lines_changed: number;
 }
 let intervalId;
+// let pythonProcess;
 const dynamicWebviews: { [id: string]: vscode.WebviewPanel } = {};
 
 export function activate(context: vscode.ExtensionContext) {
@@ -161,7 +164,8 @@ function mergeCommitsByCommitter(data: CommitData[]): CommitData[] {
 }
 
 function readChangesJsonFile(): CommitData[] | null {
-    const filePath = path.join(__dirname, 'changes.json');
+    const workspacePath = vscode.workspace?.workspaceFolders?.[0]?.uri.fsPath || '';
+    const filePath = path.join(workspacePath, 'changes.json');
 
     try {
         const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -334,38 +338,38 @@ async function updateCommitData() {
     await fetchData();
 }
 
-function runPythonScript() {
-  // Get the absolute path of the currently executing TypeScript file Az elérési út megtekintése a jelenlegi futó file-tól
-  const currentFilePath = __filename;
+/*function runPythonScript() {
+    if (pythonProcess) {
+        pythonProcess.kill();
+    }
+    const currentFilePath = __filename;
+    const rootDirectory = path.join(path.dirname(currentFilePath), '..');
+    const pythonScriptPath = path.join(rootDirectory, 'temalabor.py');
 
-  // Root könyvtár megkeresése
-  const rootDirectory = path.join(path.dirname(currentFilePath), '..');
+    // Spawn the Python process
+    pythonProcess = child_process.spawn('python', [pythonScriptPath]);
 
-  // A Python script megkeresése a root könyvtárban
-  const pythonScriptPath = path.join(rootDirectory, 'temalabor.py');
+    pythonProcess.stdout.on('data', (data) => {
+        console.log(`Python Script Output: ${data}`);
+    });
 
-  const pythonProcess = child_process.spawn('python', [pythonScriptPath]);
+    pythonProcess.stderr.on('data', (data) => {
+        console.error(`Python Script Error: ${data}`);
+    });
 
-  pythonProcess.stdout.on('data', (data) => {
-      console.log(`Python Script Output: ${data}`);
-  });
-
-  pythonProcess.stderr.on('data', (data) => {
-      console.error(`Python Script Error: ${data}`);
-  });
-
-  pythonProcess.on('close', (code) => {
-      console.log(`Python Script exited with code ${code}`);
-  });
-}
+    pythonProcess.on('close', (code) => {
+        console.log(`Python Script exited with code ${code}`);
+    });
+}*/
 export function initalize() {
-  runPythonScript();
-	updateCommitData();
+  // runPythonScript();
+  jsonGenerator();
+  updateCommitData();
 };
 
 // Ez akkor fut le ha kikapcsol az extention
 export function deactivate() {
   if (intervalId) {
     clearInterval(intervalId);
-}
+};
 }
