@@ -361,7 +361,7 @@ async function updateCommitData() {
         console.log(`Python Script exited with code ${code}`);
     });
 }*/
-export function initalize() {
+export async function initalize() {
   // runPythonScript();
   jsonGenerator();
   updateCommitData();
