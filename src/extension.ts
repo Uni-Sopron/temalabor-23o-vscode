@@ -4,21 +4,19 @@ try {
 	console.log("module-alias import error !");
 }
 import * as vscode from "vscode";
-import * as request from 'request-promise-native'; // Make sure to install the 'request-promise-native' package
 const fs = require('fs');
 const path = require('path');
 
 import { EXTENSION_CONSTANT } from "constant";
 import { LeftPanelWebview } from "providers/left-webview-provider";
-import { jsonGenerator } from "../temalabor";
-// import * as child_process from 'child_process';
+import * as child_process from 'child_process';
 
 interface CommitData {
     committer: string;
     lines_changed: number;
 }
 let intervalId;
-// let pythonProcess;
+let pythonProcess;
 const dynamicWebviews: { [id: string]: vscode.WebviewPanel } = {};
 
 export function activate(context: vscode.ExtensionContext) {
@@ -338,7 +336,7 @@ async function updateCommitData() {
     await fetchData();
 }
 
-/*function runPythonScript() {
+function runPythonScript() {
     if (pythonProcess) {
         pythonProcess.kill();
     }
@@ -360,10 +358,9 @@ async function updateCommitData() {
     pythonProcess.on('close', (code) => {
         console.log(`Python Script exited with code ${code}`);
     });
-}*/
+}
 export async function initalize() {
-  // runPythonScript();
-  jsonGenerator();
+  runPythonScript();
   updateCommitData();
 };
 

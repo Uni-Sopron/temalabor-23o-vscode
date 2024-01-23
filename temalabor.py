@@ -72,6 +72,10 @@ def main():
                 else:
                     contributor_commits[contributor_name] = 1
 
+            with open('dist/changes.json', 'w') as json_file:
+                json.dump(simplified_commits, json_file, indent=2)
+            with open('dist/contributors.json', 'w') as contributors_file:
+                json.dump(contributor_commits, contributors_file, indent=2)
             with open('changes.json', 'w') as json_file:
                 json.dump(simplified_commits, json_file, indent=2)
             with open('contributors.json', 'w') as contributors_file:
